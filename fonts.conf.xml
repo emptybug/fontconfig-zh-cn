@@ -1,0 +1,117 @@
+<fontconfig>
+    <!-- Default monospace fonts -->
+    <match target="pattern">
+        <test qual="any" name="family">
+            <string>monospace</string>
+        </test>
+        <edit name="family" mode="prepend" binding="same">
+            <string>Iosevka</string>
+        </edit>
+    </match>
+    <!--
+  Accept deprecated 'mono' alias, replacing it with 'monospace'
+-->
+    <match target="pattern">
+        <test qual="any" name="family">
+            <string>mono</string>
+        </test>
+        <edit name="family" mode="assign" binding="same">
+            <string>Iosevka</string>
+        </edit>
+    </match>
+    <!--
+  Accept alternate 'sans serif' spelling, replacing it with 'sans-serif'
+-->
+    <match target="pattern">
+        <test qual="any" name="family">
+            <string>sans serif</string>
+        </test>
+        <edit name="family" mode="assign" binding="same">
+            <string>方正悠黑简体</string>
+        </edit>
+    </match>
+    <!--
+  Accept deprecated 'sans' alias, replacing it with 'sans-serif'
+-->
+    <match target="pattern">
+        <test qual="any" name="family">
+            <string>sans</string>
+        </test>
+        <edit name="family" mode="assign" binding="same">
+            <string>方正悠黑简体</string>
+        </edit>
+    </match>
+    <!-- Default serif fonts -->
+    <match target="pattern">
+        <test qual="any" name="family">
+            <string>serif</string>
+        </test>
+        <edit name="family" mode="prepend" binding="same">
+            <string>方正屏显雅宋简体</string>
+        </edit>
+    </match>
+    <!--
+  Accept alternate 'system ui' spelling, replacing it with 'system-ui'
+-->
+    <match target="pattern">
+        <test qual="any" name="family">
+            <string>system ui</string>
+        </test>
+        <edit name="family" mode="assign" binding="same">
+            <string>方正悠黑简体</string>
+        </edit>
+    </match>
+    <!-- Fallback fonts preference order -->
+    <alias>
+        <family>sans</family>
+        <prefer>
+            <family>方正悠黑简体</family>
+            <family>Noto Sans</family>
+            <family>Noto Sans CJK SC</family>
+            <family>Noto Sans CJK TC</family>
+            <family>Noto Sans CJK JP</family>
+            <family>Noto Sans CJK KR</family>
+            <family>Noto Color Emoji</family>
+            <family>Noto Emoji</family>
+        </prefer>
+    </alias>
+    <alias>
+        <family>sans-serif</family>
+        <prefer>
+            <family>方正悠黑简体</family>
+            <family>Noto Sans</family>
+            <family>Noto Sans CJK SC</family>
+            <family>Noto Sans CJK TC</family>
+            <family>Noto Sans CJK JP</family>
+            <family>Noto Sans CJK KR</family>
+            <family>Noto Color Emoji</family>
+            <family>Noto Emoji</family>
+        </prefer>
+    </alias>
+    <alias>
+        <family>serif</family>
+        <prefer>
+            <family>方正屏显雅宋简体</family>
+            <family>Noto Serif</family>
+            <family>Noto Serif CJK SC</family>
+            <family>Noto Serif CJK TC</family>
+            <family>Noto Serif CJK JP</family>
+            <family>Noto Serif CJK KR</family>
+            <family>Noto Color Emoji</family>
+            <family>Noto Emoji</family>
+        </prefer>
+    </alias>
+    <alias>
+        <family>monospace</family>
+        <prefer>
+            <family>Iosevka</family>
+            <family>方正悠黑简体</family>
+            <family>Noto Sans CJK SC</family>
+            <family>Noto Sans CJK TC</family>
+            <family>Noto Sans CJK JP</family>
+            <family>Noto Sans CJK KR</family>
+            <family>Noto Color Emoji</family>
+            <family>Noto Emoji</family>
+        </prefer>
+    </alias>
+</fontconfig>
